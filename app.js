@@ -10,8 +10,6 @@ var scores;
 
 // Идэвхтэй тоглогчын цуглуулж байгаа ээлжийн оноо...
 var roundScore;
-// Шоо аль талаараа буусныг хадгалах хувьсагч хэрэгтэй, 1-6 гэсэн утгыг энэ хувьсагчид санамсаргүйгээр үүсгэж өгнө.
-var diceNumber = Math.floor(Math.random() * 6) + 1;
 
 // Шооны зургийг үзүүлэх элементийг DOM-оос хайж олоод diceDom-д хадгалж байна.
 var diceDom = document.querySelector(".dice");
@@ -54,6 +52,9 @@ function initGame() {
 // Шоог шидэх эвент листенер
 document.querySelector(".btn-roll").addEventListener("click", function () {
   if (isNewGame) {
+    // 1-6 доторх санамсаргүй нэг тоо гаргаж авч байна.
+    var diceNumber = Math.floor(Math.random() * 6) + 1;
+
     // Шооны зургийг вэб дээр гаргаж ирнэ
     diceDom.style.display = "block";
 
